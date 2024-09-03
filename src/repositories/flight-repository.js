@@ -21,6 +21,29 @@ class FlightRepository extends CrudRepository{
        
         return response;
        }
+
+       async getFlight(data){
+        const flight = await Flight.findOne({
+            where: { id: '1' },
+            attributes: [
+              'id',
+              'flightNumber',
+              'airplaneId',
+              'departureAirportId',
+              'arrivalAirportId',
+              'arrivalTime',
+              'departureTime',
+              'price',
+              'boardingGate',
+              'totalSeats',
+              'createdAt',
+              'updatedAt',
+              // Make sure no extra spaces or empty attributes are here
+            ]
+          });
+         
+          return flight;
+       }
 }
 
 module.exports = FlightRepository;   
