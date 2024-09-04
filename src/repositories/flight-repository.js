@@ -65,7 +65,7 @@ class FlightRepository extends CrudRepository {
 
 
 
-        if (parseInt(dec)) {
+        if ((+dec)) {
             await flight.decrement('totalSeats', { by: seats });
 
         } else {
