@@ -3,7 +3,7 @@ const airplane = require('../models/airplane');
 const CrudRepository = require('./crud-repository');
 const { Flight } = require('../models')
 const db = require('../models');
-const { addRowLockOnFlights } = require('../repositories/queries')
+const { addRowLockOnFlights } = require('./queries')
 
 class FlightRepository extends CrudRepository {
     constructor() {
